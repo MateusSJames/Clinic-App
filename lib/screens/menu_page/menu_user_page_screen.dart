@@ -1,6 +1,10 @@
+//import 'package:clinica_management/screens/menu_page/widgets/calendar.dart';
+import 'package:clinica_management/screens/menu_page/widgets/calendar.dart';
+import 'package:clinica_management/screens/menu_page/widgets/search_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
 
 class MenuUserScreen extends StatefulWidget {
   const MenuUserScreen({ Key? key }) : super(key: key);
@@ -10,6 +14,7 @@ class MenuUserScreen extends StatefulWidget {
 }
 
 class _MenuUserScreenState extends State<MenuUserScreen> {
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,46 +58,56 @@ class _MenuUserScreenState extends State<MenuUserScreen> {
         ),
         backgroundColor: const Color(0xFFF84B5A),
       ),
-      bottomNavigationBar: BottomAppBar(
-        shape: const CircularNotchedRectangle(),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                children: [
-                  IconButton(
-                    onPressed: (){}, 
-                    icon: const Icon(Icons.home_outlined, size: 35,),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                    child: IconButton(
-                      onPressed: (){}, 
-                      icon: const FaIcon(FontAwesomeIcons.heart, size: 30,),
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(right: 20.0),
-                    child: IconButton(
-                      onPressed: (){}, 
-                      // ignore: deprecated_member_use
-                      icon: const FaIcon(FontAwesomeIcons.edit, size: 30,),
-                    ),
-                  ),
-                  IconButton(
-                    onPressed: (){}, 
-                    icon: const Icon(Icons.person, size: 30,),
-                  ),
-                ],
-              )
-            ]
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        selectedItemColor: const Color(0xFFF84B5A),
+        showSelectedLabels: false,
+        items: const [
+          BottomNavigationBarItem(
+            label: '',
+            icon: Icon(Icons.home_outlined, color: Colors.grey, size: 30.0,
+            ),
           ),
+          BottomNavigationBarItem(
+            label: '',
+            icon: FaIcon(FontAwesomeIcons.heart, color: Colors.grey,
+            ),
+          ),
+          BottomNavigationBarItem(
+            label: '',
+            // ignore: deprecated_member_use
+            icon: FaIcon(FontAwesomeIcons.edit, color: Colors.grey,
+            ),
+          ),
+          BottomNavigationBarItem(
+            label: '',
+            icon: Icon(Icons.person_outline, color: Colors.grey,
+            ),
+          ),
+        ],
+      ),
+      body: Container(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+        color: Colors.white,
+        child: Column(
+          children: [
+            SizedBox(height: 20,),
+            SearchField(),
+            const SizedBox(height: 30,),
+            CalendarField(),
+            // Container(
+            //   width: MediaQuery.of(context).size.width*0.85,
+            //   height: 170,
+            //   decoration: const BoxDecoration(
+            //     borderRadius: BorderRadius.all(Radius.circular(20)),
+            //     color: Color.fromARGB(255, 214, 211, 211),
+            //   ),
+            //   child: Column(
+                
+            //   ),
+            // ),
+          ],
         ),
       ),
     );

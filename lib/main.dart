@@ -1,15 +1,23 @@
+import 'package:clinica_management/screens/cadastro_page/cadastro_screen.dart';
 import 'package:clinica_management/screens/initial_page/initial_page_screen.dart';
 import 'package:clinica_management/screens/menu_page/menu_user_page_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() {
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/',
+      initialRoute: '/cadastro',
       routes: {
         '/' : (context) => const MenuUserScreen(),
+        '/cadastro': (context) => const CadastroScreen(),
       },
+      localizationsDelegates: const [
+        GlobalWidgetsLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+      ],
+      supportedLocales: const [Locale('pt', "BR")],
     ),
   );
 }
