@@ -2,8 +2,14 @@ import 'package:flutter/material.dart';
 
 class FieldsCadastro extends StatelessWidget {
   final String nomeCampo;
+  final TextEditingController controller;
   final String nomeLabel;
-  const FieldsCadastro({ Key? key, required this.nomeCampo, required this.nomeLabel }) : super(key: key);
+  const FieldsCadastro({ 
+    Key? key, 
+    required this.nomeCampo, 
+    required this.nomeLabel,
+    required this.controller, 
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +31,7 @@ class FieldsCadastro extends StatelessWidget {
             border: const OutlineInputBorder(),
             hintText: nomeCampo,
           ),
+          controller: controller,
         ),
       ],
     );

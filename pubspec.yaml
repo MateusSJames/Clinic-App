@@ -40,6 +40,9 @@ dependencies:
   font_awesome_flutter: ^10.1.0
   intl: ^0.17.0
   week_of_year: ^2.0.0
+  sqflite: ^2.0.2+1
+  path_provider: ^2.0.11
+  uuid: ^3.0.6
 
 dev_dependencies:
   flutter_test:
