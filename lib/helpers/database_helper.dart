@@ -71,13 +71,14 @@ class DatabaseHelper {
 
   Future<List<PacienteSimplificado>> getPacienteSimplificadoByName(String nome) async {
     Database? db = await this.database;
-
-    var pacientes = await db!.query(pacientetable,
-    columns: [pacienteNome, pacienteCns, pacienteNasc],
-    where: "$pacienteNome = ?",
-    whereArgs: [nome]
-    );
-
+    String aux = '%$nome%';
+    var pacientes = await db!.rawQuery("SELECT $pacienteNome, $pacienteCns, $pacienteNasc FROM $pacientetable WHERE $pacienteNome LIKE '$aux' OR $pacienteCns LIKE '$aux'");
+    // var pacientes = await db!.query(pacientetable,
+    // columns: [pacienteNome, pacienteCns, pacienteNasc],
+    // where: "$pacienteNome LIKE ? OR $pacienteCns LIKE ?",
+    // whereArgs: [aux]
+    // );
+    print(pacientes);
     List<PacienteSimplificado> pacientesNome = pacientes.isNotEmpty ? pacientes.map((e) => PacienteSimplificado.fromMap(e)).toList() : [];
 
     return pacientesNome;
