@@ -1,5 +1,6 @@
 import 'package:clinica_management/screens/cadastro_page/cadastro_screen.dart';
 import 'package:clinica_management/screens/initial_page/initial_page_screen.dart';
+import 'package:clinica_management/screens/menu_options/menu_options_screen.dart';
 import 'package:clinica_management/screens/menu_page/menu_user_page_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -10,8 +11,9 @@ void main() {
       debugShowCheckedModeBanner: false,
       initialRoute: '/cadastro',
       routes: {
-        '/' : (context) => const MenuUserScreen(),
+        '/': (context) => const MenuUserScreen(),
         '/cadastro': (context) => const CadastroScreen(),
+        '/menu-options': (context) => const MenuOptionsScreen()
       },
       localizationsDelegates: const [
         GlobalWidgetsLocalizations.delegate,
