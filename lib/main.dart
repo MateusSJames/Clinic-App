@@ -1,3 +1,4 @@
+import 'package:clinica_management/screens/cadastro_completo_page/cadastro_completo_screen.dart';
 import 'package:clinica_management/screens/cadastro_page/cadastro_screen.dart';
 import 'package:clinica_management/screens/initial_page/initial_page_screen.dart';
 import 'package:clinica_management/screens/menu_options/menu_options_screen.dart';
@@ -14,6 +15,7 @@ void main() {
       routes: {
         '/': (context) => const MenuUserScreen(),
         '/cadastro': (context) => const CadastroScreen(),
+        '/cadastro-completo': (context) => const CadastroCompleto(),
         '/pendentes': (context) => const SolicitacoesPendentes(),
         '/menu-options': (context) => const MenuOptionsScreen()
       },

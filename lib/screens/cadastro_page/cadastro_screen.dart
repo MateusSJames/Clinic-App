@@ -20,6 +20,9 @@ class _CadastroScreenState extends State<CadastroScreen> {
   final TextEditingController _nomeController = TextEditingController();
   final TextEditingController _cnsController = TextEditingController();
   final TextEditingController _dataController = TextEditingController();
+  final FocusNode? _nomeNode = FocusNode();
+  final FocusNode? _cnsNode = FocusNode();
+  final FocusNode? _dataNode = FocusNode();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,6 +62,7 @@ class _CadastroScreenState extends State<CadastroScreen> {
                   nomeCampo: 'Digite o número do cns do paciente',
                   nomeLabel: 'CNS',
                   controller: _cnsController,
+                  textInputType: TextInputType.number,
                 ),
                 const SizedBox(
                   height: 30,
@@ -87,14 +91,17 @@ class _CadastroScreenState extends State<CadastroScreen> {
                         duration: Duration(seconds: 3),
                       ),
                     );
-                  }
-                  await _dbhelper.insertPaciente(paciente);
+                  } else {
+                    await _dbhelper.insertPaciente(paciente);
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(
                         content: Text('Cadastro realizado com sucesso'),
                         backgroundColor: Colors.green,
                         duration: Duration(seconds: 3),
                       ));
+                    Navigator.of(context).pushNamed('/menu-options');
+                  }
+                  
                 })
               ],
             ),

@@ -16,14 +16,13 @@ class SolicitacoesPendentes extends StatefulWidget {
 
 class _SolicitacoesPendentesState extends State<SolicitacoesPendentes> {
 
-  DatabaseHelper _dbhelper = DatabaseHelper();
+  final DatabaseHelper _dbhelper = DatabaseHelper();
   List<PacienteSimplificado> pacientesPendentes = [];
   final _pacientesPendentes = ListaPacientesPendentes();
 
   @override
   void initState() {
     _pacientesPendentes.getPacientesPendentes();
-    _pacientesPendentes.pacientes.map((element) => print(element));
     super.initState();
   }
   @override
