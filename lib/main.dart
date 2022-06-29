@@ -14,11 +14,8 @@ void main() {
       routes: {
         '/': (context) => const MenuUserScreen(),
         '/cadastro': (context) => const CadastroScreen(),
-<<<<<<< HEAD
         '/pendentes': (context) => const SolicitacoesPendentes(),
-=======
         '/menu-options': (context) => const MenuOptionsScreen()
->>>>>>> develop
       },
       localizationsDelegates: const [
         GlobalWidgetsLocalizations.delegate,
