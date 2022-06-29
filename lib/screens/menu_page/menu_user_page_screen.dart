@@ -52,7 +52,9 @@ class _MenuUserScreenState extends State<MenuUserScreen> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
-        onPressed: (){}, 
+        onPressed: (){
+          Navigator.of(context).pushNamed('/menu-options');
+        }, 
         child: const Icon(
           Icons.add
         ),
@@ -91,10 +93,10 @@ class _MenuUserScreenState extends State<MenuUserScreen> {
         height: MediaQuery.of(context).size.height,
         color: Colors.white,
         child: Column(
-          children: [
+          children: const [
             SizedBox(height: 20,),
             SearchField(),
-            const SizedBox(height: 30,),
+            SizedBox(height: 30,),
             CalendarField(),
             // Container(
             //   width: MediaQuery.of(context).size.width*0.85,

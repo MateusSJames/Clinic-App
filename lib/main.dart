@@ -10,7 +10,7 @@ void main() {
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/pendentes',
+      initialRoute: '/',
       routes: {
         '/': (context) => const MenuUserScreen(),
         '/cadastro': (context) => const CadastroScreen(),
