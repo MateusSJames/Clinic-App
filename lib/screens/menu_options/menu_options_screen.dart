@@ -26,13 +26,21 @@ class MenuOptionsScreen extends StatelessWidget {
                 ArrowLeftButton(onPressed: () {
                   Navigator.pop(context);
                 }),
-                OptionButton(onPressed: () {
-                  Navigator.of(context).pushNamed('/cadastro');
-                }, title: 'Cadastrar paciente'),
-                OptionButton(onPressed: () {}, title: 'Iniciar atendimento'),
-                OptionButton(onPressed: () {
-                  Navigator.of(context).pushNamed('/pendentes');
-                }, title: 'Solicitações pendentes'),
+                OptionButton(
+                    onPressed: () {
+                      Navigator.of(context).pushNamed('/cadastro');
+                    },
+                    title: 'Cadastrar paciente'),
+                OptionButton(
+                    onPressed: () {
+                      Navigator.of(context).pushNamed('/apontamento');
+                    },
+                    title: 'Iniciar atendimento'),
+                OptionButton(
+                    onPressed: () {
+                      Navigator.of(context).pushNamed('/pendentes');
+                    },
+                    title: 'Solicitações pendentes'),
                 OptionButton(onPressed: () {}, title: 'Relatórios'),
               ],
             ),
