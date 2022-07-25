@@ -1,3 +1,4 @@
+import 'package:clinica_management/screens/apontamento/apontamento_screen.dart';
 import 'package:clinica_management/screens/cadastro_completo_page/cadastro_completo_screen.dart';
 import 'package:clinica_management/screens/cadastro_page/cadastro_screen.dart';
 import 'package:clinica_management/screens/initial_page/initial_page_screen.dart';
@@ -17,7 +18,8 @@ void main() {
         '/cadastro': (context) => const CadastroScreen(),
         '/cadastro-completo': (context) => const CadastroCompleto(),
         '/pendentes': (context) => const SolicitacoesPendentes(),
-        '/menu-options': (context) => const MenuOptionsScreen()
+        '/menu-options': (context) => const MenuOptionsScreen(),
+        '/apontamento': (context) => const ApontamentoScreen()
       },
       localizationsDelegates: const [
         GlobalWidgetsLocalizations.delegate,
